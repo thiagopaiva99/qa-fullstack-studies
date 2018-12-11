@@ -23,3 +23,5 @@ ruby -v
 echo "[+] Installing the Bundler"
 gem install bundler
 
+echo "[+] Installing Rubocop"
+gem install rubocop
