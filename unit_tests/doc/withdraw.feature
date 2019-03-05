@@ -18,5 +18,5 @@ Scenario: I have balance but not enough
 Scenario: Limit for withdraw
     Given that I have R$ 1000 in my checking account
     When I make a withdraw of R$ 701
-    Then show the message "Maximum service limit is $ 700 :/"
+    Then show the message "Maximum service limit is R$ 700 :/"
     And my balance should be R$ 1000
