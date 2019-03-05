@@ -23,5 +23,17 @@ describe CheckingAccount do
                 expect(@account.balance).to eql 800.0
             end
         end
+
+        context 'when the value is insufficient' do
+            before(:all) do
+                @account = CheckingAccount.new(0000.00)
+
+                @account.withdraw(100.00)
+            end
+
+            it 'should show error message' do
+                expect(@account.message).to eql "Insufficient balance for withdraw :/"
+            end
+        end
     end
 end
