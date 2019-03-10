@@ -8,6 +8,7 @@ describe 'Forms' do
         click_button 'Login'
 
         expect(find('#flash').visible?).to be true
+        expect(find('#flash').text).to include 'Olá, Tony Stark. Você acessou a área logada!'
     end
 
     it 'should show wrong user message' do
