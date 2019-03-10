@@ -20,6 +20,7 @@ describe 'Forms' do
         click_button 'Login'
 
         expect(find('.flash.error').visible?).to be true
+        expect(find('.flash.error').text).to include 'O usuário informado não está cadastrado!'
     end
 
     it 'should show wrong password message' do
@@ -31,5 +32,6 @@ describe 'Forms' do
         click_button 'Login'
 
         expect(find('.flash.error').visible?).to be true
+        expect(find('.flash.error').text).to include 'Senha é invalida!'
     end
 end
