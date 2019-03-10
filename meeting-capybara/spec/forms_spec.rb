@@ -1,7 +1,9 @@
 describe 'Forms' do
-    it 'should login' do
+    before(:each) do
         visit 'http://training-wheels-protocol.herokuapp.com/login'
+    end
 
+    it 'should login' do
         fill_in 'username', with: 'stark'
         fill_in 'password', with: 'jarvis!'
 
@@ -12,8 +14,6 @@ describe 'Forms' do
     end
 
     it 'should show wrong user message' do
-        visit 'http://training-wheels-protocol.herokuapp.com/login'
-
         fill_in 'username', with: 'starkkk'
         fill_in 'password', with: 'jarvis!'
 
@@ -24,8 +24,6 @@ describe 'Forms' do
     end
 
     it 'should show wrong password message' do
-        visit 'http://training-wheels-protocol.herokuapp.com/login'
-
         fill_in 'username', with: 'stark'
         fill_in 'password', with: 'jarvis'
 
