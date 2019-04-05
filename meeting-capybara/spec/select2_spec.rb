@@ -29,7 +29,22 @@ describe 'Select2' do
 
     describe 'Multiple' do
         before(:each) do
-            visit 'http://training-wheels-protocol.herokuapp.com/apps/select2/multiple.html'
+            visit 'http://training-wheels-protocol.herokuapp.com/apps/select2/multi.html'
+        end
+
+        def select_actor(actor)
+            find('.select2-selection--multiple').click
+            sleep(0.5)
+            find('.select2-search__field').set actor
+            find('.select2-results__option').click
+        end
+
+        it 'should select actors', :multi do
+            actors = ['Jim Carrey', 'Owen Wilson', 'Kevin James']
+
+            actors.each do |actor|
+                select_actor(actor)                
+            end
         end
     end
 
