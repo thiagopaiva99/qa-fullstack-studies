@@ -20,7 +20,7 @@ describe 'Register' do
             find('input[name=username]').set 'thiago'
             find('input[name=password]').set '123456'
             
-            click_button 'Criar Conta'
+            click_link 'Criar Conta'
         end
 
         expect(page).to have_content 'Dados enviados. Aguarde aprovação do seu cadastro!'
