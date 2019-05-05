@@ -23,7 +23,11 @@ RSpec.configure do |config|
     example_group = example.example_group.to_s.split('::')[2].downcase.tr(' ', '_')
     file_name = example.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ', '_')
 
-    page.save_screenshot('logs/' + example_group + '/' + file_name + '.png')
+    if example.exception
+      page.save_screenshot('logs/fails/' + file_name + '.png')
+    else
+      page.save_screenshot('logs/' + example_group + '/' + file_name + '.png')
+    end
   end
 end
 
