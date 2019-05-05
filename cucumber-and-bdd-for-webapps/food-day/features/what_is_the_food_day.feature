@@ -3,12 +3,18 @@
 Feature: What is the food day
     We want to know what is the food day at Porto Alegre
 
-    Scenario: Today is day of Strogonoff
-        Given that today is Monday
+    Scenario Outline: Food Day
+        Given that today is <day>
         When I ask what is the food day
-        Then the answer should be "Strogonoff"
+        Then the answer should be <answer>
 
-    Scenario: Today is day of Parmeggiana
-        Given that today is Tuesday
-        When I ask what is the food day
-        Then the answer should be "Parmeggiana"
+        Examples:
+        | day           | answer         |
+        | "Monday"      | "Strogonoff"   |
+        | "Tuesday"     | "Parmeggiana"  |
+        | "Wednesday"   | "Barbecue"     |
+        | "Thursday"    | "Lamen"        |
+        | "Friday"      | "Hamburguer"   |
+        | "Saturday"    | "Fries"        |
+        | "Sunday"      | "Pizza"        |
+        | "Other Value" | "Dia Inválido" |
