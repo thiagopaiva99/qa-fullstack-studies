@@ -1,6 +1,6 @@
 describe 'Windows' do 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/windows'
+        visit '/windows'
     end
 
     it 'should open a new window' do

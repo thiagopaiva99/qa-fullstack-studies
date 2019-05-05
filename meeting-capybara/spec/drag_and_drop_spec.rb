@@ -1,6 +1,6 @@
 describe 'Drag and Drop' do 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/drag_and_drop'
+        visit '/drag_and_drop'
     end
 
     it 'should spiderman belongs to the iron man team' do

@@ -1,6 +1,6 @@
 describe 'Radio' do 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/radios'
+        visit '/radios'
     end
 
     it 'should select cap' do

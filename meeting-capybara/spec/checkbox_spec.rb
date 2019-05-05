@@ -1,6 +1,6 @@
 describe 'Checkbox' do 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/checkboxes'
+        visit '/checkboxes'
     end
 
     it 'should check some option' do

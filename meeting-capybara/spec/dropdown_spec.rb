@@ -1,6 +1,6 @@
 describe 'Dropdown' do
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
     end
 
     it 'should select some avenger with dropdown id' do

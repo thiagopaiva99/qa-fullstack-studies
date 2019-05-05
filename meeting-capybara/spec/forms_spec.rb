@@ -1,6 +1,6 @@
 describe 'Forms' do
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
     end
 
     it 'should login' do

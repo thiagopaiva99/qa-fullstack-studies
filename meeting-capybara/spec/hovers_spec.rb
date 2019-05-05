@@ -1,6 +1,6 @@
 describe 'Mouse Hovers' do 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/hovers'
+        visit '/hovers'
     end
 
     it 'should the mouse hover on Blade' do

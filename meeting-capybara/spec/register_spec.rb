@@ -1,12 +1,14 @@
 describe 'Register' do 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/access'
+        visit '/access'
     end
 
     it 'should login' do
         within('#login') do
             find('input[name=username]').set 'stark'
             find('input[name=password]').set 'jarvis!'
+
+            sleep 2
             
             click_button 'Entrar'
         end
@@ -19,6 +21,8 @@ describe 'Register' do
         within('#signup') do
             find('input[name=username]').set 'thiago'
             find('input[name=password]').set '123456'
+
+            sleep 2
             
             click_link 'Criar Conta'
         end

@@ -1,6 +1,6 @@
 describe 'Login Random Fields' do 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/login2'
+        visit '/login2'
     end
 
     it 'should appear the born date' do
