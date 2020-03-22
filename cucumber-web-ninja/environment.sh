@@ -14,7 +14,7 @@ docker run --name nflix-api-users --network=skynet -e "DATABASE=pgdb" -p 3001:30
 docker run --name nflix-api-movies --network=skynet -e "DATABASE=pgdb" -p 3002:3002 -d papitoio/nflix-api-movies
 
 # Creating the container to run the api gateway
-docker run --name nflix-api-gateway --network=skynet -e "DATABSE=pgdb" -e "API_USERS=http://nflix-api-users:3001" -e "API_MOVIES=http://nflix-api-movies:3002" -p 3000:3000 -d papitoio/nflix-api-gateway
+docker run --name nflix-api-gateway --network=skynet -e "DATABASE=pgdb" -e "API_USERS=http://nflix-api-users:3001" -e "API_MOVIES=http://nflix-api-movies:3002" -p 3000:3000 -d papitoio/nflix-api-gateway
 
 # Creating the container to run the frontend
-docker run --name nflix-web --network=skynet -e "VUE_APP=http://0.0.0.0:3000" -p 8080:8080 -d papitoio/nflix-web
+docker run --name nflix-web --network=skynet -e "VUE_APP_API=http://localhost:3000" -p 8080:8080 -d papitoio/nflix-web
