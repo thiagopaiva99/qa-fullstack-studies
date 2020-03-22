@@ -16,7 +16,8 @@ Entao("devo ser autenticado") do
     expect(token.length).to be 147
 end
 
-Entao("devo ver {string} na área logada") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+Entao("devo ver {string} na área logada") do |expected_name|
+    user = find('.sidebar-wrapper .user .info span')
+    expect(user).to have_text expected_name
 end
   
