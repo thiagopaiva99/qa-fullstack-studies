@@ -10,3 +10,5 @@ docker run --name pgadmin --network=skynet -e "PGADMIN_DEFAULT_EMAIL=root@qaninj
 docker run --name nflix-api-users --network=skynet -e "DATABASE=pgdb" -p 3001:3001 -d papitoio/nflix-api-users
 
 docker run --name nflix-api-movies --network=skynet -e "DATABASE=pgdb" -p 3002:3002 -d papitoio/nflix-api-movies
+
+docker run --name nflix-api-gateway --network=skynet -e "DATABSE=pgdb" -e "API_USERS=http://nflix-api-users:3001" -e "API_MOVIES=http://nflix-api-movies:3002" -p 3000:3000 -d papitoio/nflix-api-gateway
